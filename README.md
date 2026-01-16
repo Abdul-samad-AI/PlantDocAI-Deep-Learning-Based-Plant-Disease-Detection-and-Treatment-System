@@ -201,11 +201,3 @@ streamlit run app.py
 ⭐ If you find this project useful, consider giving it a **star** on GitHub.
 
 ---
-
-=======
-
----
-
-⭐ If you find this project useful, consider giving it a **star** on GitHub.
-
----
