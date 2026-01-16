@@ -209,13 +209,3 @@ streamlit run app.py
 ⭐ If you find this project useful, consider giving it a **star** on GitHub.
 
 ---
-
-If you want, I can also:
-
-* Add **GitHub badges**
-* Optimize this for **resume bullets**
-* Prepare a **deployment README**
-* Write a **research-paper style abstract**
-
-Just tell me.
->>>>>>> 901f6f198d05bfe2632c18b40d13d3ee8b1f2e85
