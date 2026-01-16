@@ -1,190 +1,203 @@
-# ==========================================================
-# 🌿 PlantDocAI — Intelligent Plant Disease Detection System
-# ==========================================================
+---
 
-# ----------------------------------------------------------
-# 📌 Overview
-# ----------------------------------------------------------
-# PlantDocAI is an end-to-end AI-powered web application
-# that detects plant diseases from leaf images and provides
-# actionable treatment recommendations.
-#
-# The system is designed for:
-# - Farmers
-# - Agronomists
-# - Agricultural researchers
-# - Agri-tech platforms
-#
-# It delivers real-world diagnostic insights including:
-# - Disease identification
-# - Confidence score
-# - Cause & symptoms
-# - Treatment recommendations
-# - Suggested commercial products
-# - Preventive measures
+# 🌿 PlantDocAI
 
+### Deep Learning–Based Plant Disease Detection & Treatment Recommendation System
 
-# ----------------------------------------------------------
-# 🚀 Key Highlights
-# ----------------------------------------------------------
-# - Deep Learning-based disease classification
-# - Covers 38 plant disease & healthy classes
-# - High-accuracy ResNet50 Transfer Learning model
-# - Interactive Streamlit web application
-# - Single image & batch prediction support
-# - CSV and professional PDF report generation
-# - Modular, scalable, and production-ready design
+PlantDocAI is an end-to-end **AI-powered web application** that detects plant diseases from leaf images and provides **actionable treatment recommendations**, including **causes, symptoms, prevention strategies, and suggested products**.
 
+The project demonstrates the **practical application of Deep Learning in Agriculture** and is designed for **farmers, agronomists, researchers, and agri-tech platforms**.
 
-# ==========================================================
-# 🧠 Model Overview
-# ==========================================================
+---
 
-Architecture:        ResNet50 (Convolutional Neural Network)
-Training Strategy:   Transfer Learning (ImageNet pretrained)
-Loss Function:       Cross-Entropy Loss
-Optimizer:           Adam
-Input Size:          224 x 224 RGB images
-Number of Classes:   38 (Healthy + Diseased plant categories)
-Dataset:             PlantVillage (curated & preprocessed)
+## 🚀 Key Features
 
+* 🌱 Detects **38 plant disease & healthy classes**
+* 🧠 High-accuracy **ResNet50 Transfer Learning model**
+* 📸 Single image & batch image prediction
+* 📊 Confidence score for every prediction
+* 💊 Detailed treatment & prevention guidance
+* 📁 CSV & professional PDF report generation
+* 🖥️ Interactive **Streamlit web interface**
+* 🎨 Clean, modern, and user-friendly UI
 
-# ==========================================================
-# 🖥️ Application Features
-# ==========================================================
+---
 
-# ----------------------------------------------------------
-# 🔹 Single Image Prediction
-# ----------------------------------------------------------
-# - Upload a plant leaf image
-# - Get instant prediction with:
-#     • Disease name
-#     • Confidence score (%)
-# - Expandable diagnostic sections:
-#     • Cause
-#     • Symptoms
-#     • Treatment
-#     • Recommended products
-#     • Prevention steps
-# - Color-coded results:
-#     • Green → Healthy
-#     • Red → Diseased
+## 🧠 Model Overview
 
+| Component         | Details                                 |
+| ----------------- | --------------------------------------- |
+| Architecture      | ResNet50 (CNN)                          |
+| Training Strategy | Transfer Learning (ImageNet pretrained) |
+| Loss Function     | Cross-Entropy Loss                      |
+| Optimizer         | Adam                                    |
+| Input Size        | 224 × 224 RGB images                    |
+| Classes           | 38 (Healthy + Diseased)                 |
+| Dataset           | PlantVillage                            |
 
-# ----------------------------------------------------------
-# 🔹 Batch Prediction
-# ----------------------------------------------------------
-# - Predict multiple images from a folder
-# - Visual grid-based image display
-# - Per-image disease classification
-# - Suitable for farm-level or field analysis
+---
 
+## 🖥️ Application Functionality
 
-# ----------------------------------------------------------
-# 📥 Export & Reporting
-# ----------------------------------------------------------
-# - Download CSV reports with timestamps
-# - Generate professional PDF diagnostic reports
-# - Designed for real-world agricultural documentation
-# - Reports suitable for sharing with agronomists or clients
+### 🔹 Single Image Prediction
 
+* Upload a plant leaf image
+* Get:
 
-# ==========================================================
-# 🏗️ Project Structure
-# ==========================================================
-The dataset is intentionally **not included** in this repository due to size constraints.
+  * Disease name
+  * Confidence score (%)
+  * Expandable details:
+
+    * Cause
+    * Symptoms
+    * Treatment
+    * Recommended products
+    * Prevention steps
+* Color-coded output:
+
+  * 🟢 Healthy
+  * 🔴 Diseased
+
+### 🔹 Batch Prediction
+
+* Predict multiple images at once
+* Visual grid-based results
+* Suitable for farm-level or field-level analysis
+
+### 📥 Export & Reports
+
+* Download **CSV reports** with timestamps
+* Generate **professional PDF diagnostic reports**
+* Useful for documentation, research, and advisory use
+
+---
+
+## 🏗️ Project Structure
+
 ```
 PlantDocAI/
 │
-├── app.py                      # Main Streamlit application
-├── treatment_dict.py           # Disease → Treatment mapping
-├── best_resnet50_model.pth     # Trained model weights
-├── requirements.txt            # Python dependencies
-├── README.md                   # Project documentation
-├── .gitignore                  # Git ignore rules
-│
-├── data/                       # Not Uploaded
-│   ├── train/                  # Training dataset
-│   ├── valid/                  # Validation dataset
-│   └── test/                   # Test images (optional)
+├── app.py                     # Main Streamlit application
+├── treatment_dict.py          # Disease → Treatment mapping
+├── best_resnet50_model.pth    # Trained model weights (not tracked)
+├── requirements.txt           # Python dependencies
+├── README.md                  # Project documentation
+├── .gitignore                 # Git ignore rules
 │
 ├── assets/
-│   └── background.jpg          # UI background image
+│   └── background.jpg         # UI background image
+│
+├── data/                      # Dataset (not included in repo)
+│   ├── train/
+│   ├── valid/
+│   └── test/
 │
 └── reports/
-    ├── sample_report.pdf       # Example generated PDF
-    └── predictions.csv         # Example CSV output
+    ├── sample_report.pdf
+    └── predictions.csv
 ```
 
-# ==========================================================
-# ⚙️ Installation & Setup
-# ==========================================================
+---
 
-# 1. Clone the repository
-git clone https://github.com/your-username/PlantDocAI.git
-cd PlantDocAI
+## 📦 Dataset Information
 
-# 2. Create and activate virtual environment
+* **Dataset Name:** PlantVillage
+* **Total Classes:** 38
+* **Dataset Size:** ~5 GB
+* **Image Type:** RGB leaf images
+
+📥 Dataset download:
+[https://www.kaggle.com/datasets/emmarex/plantdisease](https://www.kaggle.com/datasets/emmarex/plantdisease)
+
+> ⚠️ The dataset is **not included in this repository** due to size constraints.
+> After downloading, place it inside the `data/` folder as shown above.
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/Abdul-samad-AI/PlantDocAI-Deep-Learning-Based-Plant-Disease-Detection-and-Treatment-System.git
+cd PlantDocAI-Deep-Learning-Based-Plant-Disease-Detection-and-Treatment-System
+```
+
+### 2️⃣ Create virtual environment
+
+```bash
 python -m venv venv
-source venv/bin/activate        # Linux / macOS
-venv\Scripts\activate           # Windows
+```
 
-# 3. Install dependencies
+Activate:
+
+* Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+* Linux / macOS:
+
+```bash
+source venv/bin/activate
+```
+
+### 3️⃣ Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-# 4. Run the Streamlit application
+### 4️⃣ Run the application
+
+```bash
 streamlit run app.py
+```
 
+---
 
-# ==========================================================
-# 📊 Dataset Information
-# ==========================================================
+## 📊 Model Performance
 
-# Dataset Name: PlantVillage
-# Total Classes: 38
-# Image Type: RGB leaf images
-# Preprocessing:
-# - Resize to 224 x 224
-# - Normalization using ImageNet statistics
-# - Data augmentation during training
+* High validation accuracy on PlantVillage dataset
+* Robust predictions on unseen images
+* Confidence score improves transparency & trust
+* Transfer learning reduces training time significantly
 
+---
 
-# ==========================================================
-# 🧪 Model Performance
-# ==========================================================
+## 🔮 Future Enhancements
 
-# - Transfer learning improves convergence speed
-# - High validation accuracy achieved on PlantVillage
-# - Robust generalization on unseen leaf images
-# - Confidence score provided for transparency
+* 📱 Mobile application support
+* 🌍 Multilingual farmer-friendly interface
+* 🌦️ Weather-aware disease prediction
+* ☁️ Cloud deployment (AWS / GCP)
+* 📷 Real-time camera-based detection
+* 🧪 Severity estimation & yield loss analysis
 
-# ==========================================================
-# 📸 Screenshots
-# ==========================================================
+---
 
+## 👨‍💻 Author
 
-# ==========================================================
-# 🔮 Future Improvements
-# ==========================================================
+**Abdul Samad**
+🔗 LinkedIn: [https://www.linkedin.com/in/abdulsamad14](https://www.linkedin.com/in/abdulsamad14)
 
-# - Mobile-friendly deployment (Android / iOS)
-# - Real-time camera-based disease detection
-# - Multilingual support for farmers
-# - Weather-aware disease prediction
-# - Cloud deployment (AWS / GCP / Azure)
-# - Integration with agricultural advisory APIs
+**Tech Stack:** Python, PyTorch, Streamlit
+**Model:** ResNet50
+**Dataset:** PlantVillage
+**Version:** 1.0
 
+---
 
-# ==========================================================
-# 👨‍💻 Author & Credits
-# ==========================================================
+## 🌱 Acknowledgements
 
-Developed by:        Abdul Samad
-LinkedIn:            https://www.linkedin.com/in/abdulsamad14
-Model:               ResNet50
-Dataset:             PlantVillage
-Version:             1.0
+* PlantVillage Dataset
+* PyTorch & Torchvision
+* Streamlit Community
 
-# ----------------------------------------------------------
-# 🌱 Thank you for using PlantDocAI!
-# ----------------------------------------------------------
+---
+
+⭐ If you find this project useful, consider giving it a **star** on GitHub.
+
+---
+
